@@ -22,6 +22,12 @@ List matches (format: `matchCode | kickoff | home vs away`):
 python main.py generate
 ```
 
+Print JSON endpoints for all matches:
+
+```powershell
+python main.py generate all
+```
+
 Print JSON endpoint for a specific `matchCode`:
 
 ```powershell
