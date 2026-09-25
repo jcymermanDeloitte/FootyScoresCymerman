@@ -26,6 +26,13 @@ def generate_matches(
     return sort_canonical_matches(generate_canonical_matches(timeout_seconds, concurrency))
 
 
+def generate_all_endpoints(
+    timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
+    concurrency: int = DEFAULT_MATCH_REQUEST_CONCURRENCY,
+) -> List[Dict[str, Any]]:
+    return [to_endpoint(match) for match in generate_matches(timeout_seconds, concurrency)]
+
+
 def generate_match_endpoint(
     match_code: str,
     timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
